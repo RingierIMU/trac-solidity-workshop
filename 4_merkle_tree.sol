@@ -16,21 +16,26 @@ Ownable
     
     constructor() ERC721("NFT Workshop", "RtcNft") {}
 
-    function mint(bytes32[] calldata merkleProof) public {
-       bytes32 node = keccak256(
-            abi.encodePacked(msg.sender)
+    function isValid(address _address, bytes32[] calldata merkleProof) public view returns (bool) {
+        bytes32 node = keccak256(
+            abi.encodePacked(_address)
         );
-        bool isValidProof = MerkleProof.verifyCalldata(
-            merkleProof,
-            merkleRoot,
-            node
-        );
-        require(isValidProof, 'Invalid proof.');
-        
-       _tokenIdCounter.increment();
-      uint256 tokenId = _tokenIdCounter.current();
 
-      _safeMint(msg.sender, tokenId);
+        return MerkleProof.verifyCalldata(
+                merkleProof,
+                merkleRoot,
+                node
+            );
+    }
+
+    function mint(bytes32[] calldata merkleProof) public {
+        bool valid = isValid(msg.sender, merkleProof);
+        require(valid, "Invalid proof.");
+        
+        _tokenIdCounter.increment();
+        uint256 tokenId = _tokenIdCounter.current();
+
+        _safeMint(msg.sender, tokenId);
     }
     
     function setMerkleRoot(bytes32 _merkleRoot) public onlyOwner {
