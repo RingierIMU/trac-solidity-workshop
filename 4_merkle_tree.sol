@@ -11,15 +11,14 @@ ERC721,
 Ownable
 {
     using Counters for Counters.Counter;
-    using MerkleProof for MerkleProof;
     Counters.Counter private _tokenIdCounter;
-    bytes32 private immutable merkleRoot;
+    bytes32 private merkleRoot;
     
     constructor() ERC721("NFT Workshop", "RtcNft") {}
 
-    function mint() public {
+    function mint(bytes32[] calldata merkleProof) public {
        bytes32 node = keccak256(
-            abi.encodePacked(account, amount)
+            abi.encodePacked(msg.sender)
         );
         bool isValidProof = MerkleProof.verifyCalldata(
             merkleProof,
@@ -34,7 +33,7 @@ Ownable
       _safeMint(msg.sender, tokenId);
     }
     
-    function setMerkleRoot(bytes32 _merkleRoot) onlyOwner {
+    function setMerkleRoot(bytes32 _merkleRoot) public onlyOwner {
         merkleRoot = _merkleRoot;
     }
 }
