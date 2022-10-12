@@ -1,13 +1,13 @@
 const keccak256 = require("keccak256");
 const { MerkleTree } = require("merkletreejs");
 
-let balances = [
-    "0xb7e390864a90b7b923c9f9310c6f98aafe43f707",
+let addresses = [
+    "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",
     "0xea674fdde714fd979de3edf0f56aa9716b898ec8",
 ];
 
-const leafNodes = balances.map((balance) =>
-    keccak256(balance)
+const leafNodes = addresses.map((address) =>
+    keccak256(address)
 );
 
 const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
