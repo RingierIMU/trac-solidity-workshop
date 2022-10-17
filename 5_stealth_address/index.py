@@ -1,6 +1,5 @@
 import hashlib
 from py_ecc.secp256k1 import *
-import sha3
 from eth_account import Account
 from Crypto.Hash import keccak
 k = keccak.new(digest_bits=256)
