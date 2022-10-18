@@ -1,4 +1,3 @@
-import hashlib
 from py_ecc.secp256k1 import *
 from eth_account import Account
 from Crypto.Hash import keccak
@@ -14,7 +13,6 @@ S = secp256k1.privtopub(s.to_bytes(32, "big")) # public key
 # address: 0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf
 p = int(0x0000000000000000000000000000000000000000000000000000000000000002) # private key
 P = secp256k1.privtopub(p.to_bytes(32, "big")) # public key
-#print(P)
 
 Q = secp256k1.multiply(S, p)
 assert Q == secp256k1.multiply(P, s)
