@@ -17,14 +17,14 @@ Ownable
 
     constructor() ERC721("Secret NFT", "SHH") {}
 
-    function mint(bytes32[] calldata merkleProof) public {
-        bool valid = canMint(msg.sender, merkleProof);
+    function mint(address _stealthAddress, bytes32[] calldata merkleProof) public onlyOwner {
+        bool valid = canMint(_stealthAddress, merkleProof);
         require(valid, "Invalid proof.");
 
         _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
 
-        _safeMint(msg.sender, tokenId);
+        _safeMint(_stealthAddress, tokenId);
     }
 
     function canMint(address _address, bytes32[] calldata merkleProof) public view returns (bool) {
