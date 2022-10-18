@@ -14,7 +14,7 @@ Ownable
     string private baseURI;
     mapping(address => bool) allowList;
 
-    constructor() ERC721("NFT Workshop", "RtcNft") {}
+    constructor() ERC721("Secret NFT", "SHH") {}
 
     function mint() public {
         require(canMint(msg.sender), "You are not allowed to mint");

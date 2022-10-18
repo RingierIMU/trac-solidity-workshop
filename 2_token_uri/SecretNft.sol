@@ -13,7 +13,7 @@ Ownable
     Counters.Counter private _tokenIdCounter;
     string private baseURI;
 
-    constructor() ERC721("NFT Workshop", "RtcNft") {}
+    constructor() ERC721("Secret NFT", "SHH") {}
 
     function mint() public {
         _tokenIdCounter.increment();

@@ -15,7 +15,7 @@ Ownable
     string private baseURI;
     bytes32 private merkleRoot;
 
-    constructor() ERC721("NFT Workshop", "RtcNft") {}
+    constructor() ERC721("Secret NFT", "SHH") {}
 
     function mint(bytes32[] calldata merkleProof) public {
         bool valid = canMint(msg.sender, merkleProof);

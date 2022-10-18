@@ -10,7 +10,7 @@ ERC721
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("NFT Workshop", "RtcNft") {}
+    constructor() ERC721("Secret NFT", "SHH") {}
 
     function mint() public {
         _tokenIdCounter.increment();
