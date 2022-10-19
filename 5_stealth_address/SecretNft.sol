@@ -14,17 +14,17 @@ Ownable
     Counters.Counter private _tokenIdCounter;
     string private baseURI;
     bytes32 private merkleRoot;
+    event PrivateTransfer(address indexed stealthRecipient, string _sharedSecret);
 
     constructor() ERC721("Secret NFT", "SHH") {}
 
-    function mint(address _stealthAddress, bytes32[] calldata merkleProof) public onlyOwner {
-        bool valid = canMint(_stealthAddress, merkleProof);
-        require(valid, "Invalid proof.");
-
+    function mint(address _stealthAddress, string calldata _sharedSecret) public onlyOwner {
         _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
 
         _safeMint(_stealthAddress, tokenId);
+
+        emit PrivateTransfer(_stealthAddress, _sharedSecret);
     }
 
     function canMint(address _address, bytes32[] calldata merkleProof) public view returns (bool) {

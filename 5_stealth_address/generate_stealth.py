@@ -30,5 +30,6 @@ p_stealth = receiverPrivate + int(Q_hex, 16)
 
 # Recipient has private key to ...
 P_stealth = secp256k1.privtopub(p_stealth.to_bytes(32, "big"))
-print(f'private key: {hex(p_stealth)}')
-print(f'address: {Account.from_key((p_stealth).to_bytes(32, "big")).address}')
+print(f'shared secret: {Q_hex}')
+print(f'stealth private key: {hex(p_stealth)}')
+print(f'stealth address: {Account.from_key((p_stealth).to_bytes(32, "big")).address}')
