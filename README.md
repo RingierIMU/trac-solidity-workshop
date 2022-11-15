@@ -1,5 +1,5 @@
-# rtc-solidity-workshop
-Code for the RTC solidity workshop
+# trac-solidity-workshop
+Code for the TRAC solidity workshop
 Here we will look at privacy (using basic cryptography) in Ethereum from the lens of an NFT smart contract.
 ## Setup
 No setup is required for this workshop. We will be using the Remix IDE to write and deploy our smart contracts.
