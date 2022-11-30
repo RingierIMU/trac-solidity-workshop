@@ -18,7 +18,7 @@ Be sure to run npm install before running the script.
 
 ## IPFS Setup
 We will be using IPFS to store our NFTs. You can download the IPFS desktop app here: https://ipfs.io/#install
-You can also just use this as your token `uri` `https://ipfs.io/ipfs/QmaHvtFEn1B3f7u9TtfLAkyBrRSoKrCF646BjmDum4sL4s?filename=`
+You can also just use this as your token `uri` `https://ipfs.io/ipfs/QmchKUshCbfshdC378EZ55Cg7kVdYJzdRH5Nygu8ZZqCFS/`
 ## Stealth Address Setup
 The scripts for stealth addresses are in 5_stealth_address/
 Be sure to run `pip install -r requirements.txt` before running the script.
