@@ -32,6 +32,10 @@ Ownable
      * by default, can be overridden in child contracts.
      */
     function _baseURI() internal view virtual override returns (string memory) {
-        return baseURI;
+        if (bytes(baseURI).length != 0) {
+            return baseURI;
+        }
+
+        return "https://ipfs.io/ipfs/QmchKUshCbfshdC378EZ55Cg7kVdYJzdRH5Nygu8ZZqCFS/";
     }
 }
