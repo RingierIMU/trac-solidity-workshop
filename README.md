@@ -22,3 +22,11 @@ You can also just use this as your token `uri` `https://ipfs.io/ipfs/QmchKUshCbf
 ## Stealth Address Setup
 The scripts for stealth addresses are in 5_stealth_address/
 Be sure to run `pip install -r requirements.txt` before running the script.
+## Goerlli faucet
+In order to test our code on a testnet, we need to deploy to the Goerli network (we use Goerli because it's recognised by opensea 🤦🏽).
+This, however requires gas. On the day you can either use the below faucet to get some testnet ETH or ask me, and I'll send some.
+https://goerlifaucet.com/
+Generally testnet ETH on Georli network is difficult to come across.
+## opensea account
+To view your newly minted NFT on the Goerli network, connect your wallet with opensea.
+https://testnets.opensea.io/account
