@@ -20,8 +20,8 @@ console.log("---------");
 console.log(merkleTree.toString());
 console.log("---------");
 console.log("Merkle Root: " + merkleTree.getHexRoot());
-console.log('Proof 1: ["' + String(merkleTree.getHexProof(leafNodes[0])).replace(',','","') + '"]');
-console.log('Proof 2: ["' + String(merkleTree.getHexProof(leafNodes[1])).replace(',','","') + '"]');
-console.log('Proof 3: ["' + String(merkleTree.getHexProof(leafNodes[2])).replace(',','","') + '"]');
-console.log('Proof 4: ["' + String(merkleTree.getHexProof(leafNodes[3])).replace(',','","') + '"]');
+console.log('Proof 1: ["' + String(merkleTree.getHexProof(leafNodes[0])).replace(/,/g,'","') + '"]');
+console.log('Proof 2: ["' + String(merkleTree.getHexProof(leafNodes[1])).replace(/,/g,'","') + '"]');
+console.log('Proof 3: ["' + String(merkleTree.getHexProof(leafNodes[2])).replace(/,/g,'","') + '"]');
+console.log('Proof 4: ["' + String(merkleTree.getHexProof(leafNodes[3])).replace(/,/g,'","') + '"]');
 
