@@ -30,3 +30,5 @@ Generally testnet ETH on Georli network is difficult to come across.
 ## opensea account
 To view your newly minted NFT on the Goerli network, connect your wallet with opensea.
 https://testnets.opensea.io/account
+## Resources
+https://www.myetherwallet.com/wallet/access/software?type=private-key

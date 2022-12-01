@@ -1,14 +1,11 @@
-from Crypto.PublicKey import ECC
-from py_ecc.secp256k1 import *
-from eth_account import Account
 from Crypto.Hash import keccak
-from eth_abi.packed import encode_packed
+from eth_account import Account
+from py_ecc.secp256k1 import *
 
 k = keccak.new(digest_bits=256)
 
-# privkey: 0xd952fe0740d9d14011fc8ead3ab7de3c739d3aa93ce9254c10b0134d80d26a30
-# address: 0x3CB39EA2f14B16B69B451719A7BEd55e0aFEcE8F
-senderPrivate = int(0xd952fe0740d9d14011fc8ead3ab7de3c739d3aa93ce9254c10b0134d80d26a30) # private key
+# address: 0xefe069d5383CD50c814d1041727d6329A3f67445
+senderPrivate = int(0x337e94a1be46364ac3e011a71090a68ad108ccbfd2616288d47fff3ac5e9e7e3) # private key
 SenderPublic = secp256k1.privtopub(senderPrivate.to_bytes(32, "big")) # public key
 
 # privkey: 0x0000000000000000000000000000000000000000000000000000000000000001

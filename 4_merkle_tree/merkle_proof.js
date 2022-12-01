@@ -15,7 +15,7 @@ const leafNodes = addresses.map((address) =>
 const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
 
 console.log("---------");
-console.log("Merke Tree");
+console.log("Merkle Tree");
 console.log("---------");
 console.log(merkleTree.toString());
 console.log("---------");
