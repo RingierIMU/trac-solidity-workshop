@@ -15,5 +15,9 @@ Q_hashed = bytearray.fromhex(Q_hex)
 
 # Sender sends to ...
 points = secp256k1.add(receiverPublic, secp256k1.privtopub(Q_hashed))
+k = keccak.new(digest_bits=256)
+publicKey = k.update(points[0].to_bytes(32, "big")+points[1].to_bytes(32, "big")).hexdigest()
+
 print(f'shared secret: {Q_hex}')
-print(f'stealth address points: {points}')
+print(f'stealth address : 0x{publicKey[-40:]}')
+
