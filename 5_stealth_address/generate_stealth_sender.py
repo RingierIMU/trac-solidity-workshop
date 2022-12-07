@@ -20,4 +20,3 @@ publicKey = k.update(points[0].to_bytes(32, "big")+points[1].to_bytes(32, "big")
 
 print(f'shared secret: {Q_hex}')
 print(f'stealth address : 0x{publicKey[-40:]}')
-
